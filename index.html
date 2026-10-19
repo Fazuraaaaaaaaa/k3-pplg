@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#143f32">
+<title>RuangK3 PPLG — K3 untuk Dunia Pengembangan Software</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+:root{--green:#164f3b;--deep:#10382d;--mint:#e3f0e7;--lime:#d9edb8;--ink:#17251e;--muted:#6d7a72;--line:#e4eae4;--bg:#f7f9f6;--white:#fff;--orange:#d88a35;--red:#b8463f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px 'DM Sans',sans-serif}button,input{font:inherit}button{cursor:pointer}.layout{min-height:100vh}.sidebar{width:235px;position:fixed;inset:0 auto 0 0;background:var(--deep);color:#f6faf7;padding:24px 15px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:10px;padding:0 8px 28px}.logo{width:39px;height:39px;border-radius:12px;background:var(--lime);color:var(--deep);display:grid;place-items:center;font-weight:900;font-size:18px}.brand b{font:800 19px Manrope}.brand small{display:block;color:#a9c8b6;font-size:10px;margin-top:2px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#d6e5dc;border-radius:10px;padding:12px;text-align:left;display:flex;gap:11px;align-items:center;font-weight:600}.nav button.active,.nav button:hover{background:#205641;color:white}.nav button span:first-child{width:20px;text-align:center}.side-tip{margin-top:auto;background:#194a38;border:1px solid #2e6b50;border-radius:13px;padding:14px;font-size:12px;line-height:1.55}.side-tip b{display:block;margin-bottom:5px}.side-tip p{color:#b8d0c1;margin:0}.side-foot{padding:16px 10px 0;color:#aac5b5;font-size:11px}.main{margin-left:235px}.top{height:68px;background:#ffffffed;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:15px;padding:0 28px;position:sticky;top:0;z-index:4;backdrop-filter:blur(12px)}.search{flex:1;max-width:560px;position:relative}.search span{position:absolute;left:13px;top:10px;color:#819087}.search input{height:40px;width:100%;border:1px solid var(--line);border-radius:10px;background:#fafcf9;padding:0 14px 0 38px;outline:none}.search input:focus{border-color:#76a98b}.user{margin-left:auto;display:flex;align-items:center;gap:9px;font-size:12px}.avatar{width:34px;height:34px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font-size:17px}.wrap{max-width:1500px;margin:auto;padding:27px}.heading{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:19px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);font-weight:800;margin-bottom:7px}.heading h1{font:800 26px Manrope;letter-spacing:-.8px;margin:0}.heading p{color:var(--muted);margin:7px 0 0;line-height:1.5}.btn{border:0;border-radius:10px;background:var(--green);color:#fff;font-weight:700;padding:11px 15px;font-size:12px}.btn:hover{background:#0e3d2d}.btn.alt{background:#fff;color:var(--green);border:1px solid #d6e2d8}.grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:18px;align-items:start}.hero{border-radius:17px;min-height:235px;padding:28px 30px;background:linear-gradient(95deg,#e2f0e7 0%,#e2f0e7f2 48%,#e2f0e73b 100%),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80') center/cover;margin-bottom:25px;display:flex;align-items:center}.hero-copy{max-width:500px}.hero h2{font:800 clamp(25px,3vw,35px)/1.15 Manrope;letter-spacing:-1px;color:#123f30;margin:0 0 11px}.hero p{color:#476254;line-height:1.65;max-width:440px;margin:0 0 18px}.actions{display:flex;gap:9px;flex-wrap:wrap}.section{margin:0 0 27px}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.section h2{font:800 17px Manrope;letter-spacing:-.4px;margin:0}.section-head p{font-size:11px;color:var(--muted);margin:5px 0 0}.link{border:0;background:none;color:var(--green);font-size:11px;font-weight:800}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{background:white;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 25px #153b2610}.card-visual{height:115px;background:#dcebe0;display:flex;align-items:center;justify-content:center;font-size:43px;position:relative}.card-visual.green{background:#dceee1}.card-visual.yellow{background:#f7ebce}.card-visual.blue{background:#dce9f0}.label{position:absolute;top:10px;left:10px;background:white;border-radius:6px;padding:5px 7px;font-size:9px;font-weight:800;color:var(--green)}.card-body{padding:13px}.card h3{font:800 13px/1.4 Manrope;margin:0 0 6px}.card p{font-size:11px;line-height:1.55;color:var(--muted);margin:0 0 12px;min-height:34px}.meta{font-size:10px;color:var(--muted);display:flex;gap:10px;margin-bottom:12px}.card .btn{width:100%;padding:9px}.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:17px;margin-bottom:13px}.panel h3{font:800 14px Manrope;margin:0 0 12px}.panel p{color:var(--muted);font-size:12px;line-height:1.6;margin:0}.progress-row{display:flex;justify-content:space-between;font-size:11px;font-weight:700;margin-bottom:9px}.bar{height:8px;border-radius:20px;background:#e9efea;overflow:hidden}.bar i{display:block;width:35%;height:100%;background:#2b805c;border-radius:20px;transition:width .25s}.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:15px}.stat{background:#fafcf9;border:1px solid #edf1ed;border-radius:10px;text-align:center;padding:10px 3px}.stat strong{display:block;font:800 18px Manrope}.stat small{font-size:9px;color:var(--muted)}.notice{background:#fff6e5;border:1px solid #f0dfb9;border-radius:12px;padding:13px;color:#715220;font-size:11px;line-height:1.55}.notice b{display:block;margin-bottom:4px}.material-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.material{background:white;border:1px solid var(--line);border-radius:12px;padding:13px;display:flex;gap:11px;align-items:flex-start}.material .file{width:34px;height:38px;background:#e5f1e8;border-radius:8px;display:grid;place-items:center;font-size:17px;flex-shrink:0}.material b{display:block;font-size:12px;margin-bottom:4px}.material small{font-size:10px;color:var(--muted)}.material button{display:block;margin-top:8px;border:0;background:none;color:var(--green);padding:0;font-weight:700;font-size:10px}.quizrow{display:flex;gap:12px;align-items:center;background:white;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:9px}.quizicon{width:40px;height:40px;display:grid;place-items:center;background:#e2f0e7;border-radius:11px;font-size:19px}.quizrow div:nth-child(2){flex:1}.quizrow b{display:block;font-size:12px}.quizrow small{color:var(--muted);font-size:10px;display:block;margin-top:5px}.page{display:none}.page.active{display:block}.lesson-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px}.lesson-nav{background:white;border:1px solid var(--line);border-radius:14px;padding:14px;height:max-content}.lesson-nav h3{font:800 13px Manrope}.lesson-nav button{display:block;width:100%;text-align:left;border:0;background:transparent;padding:10px;border-radius:8px;color:#53645a;font-size:11px}.lesson-nav button.active{background:var(--mint);color:var(--green);font-weight:800}.lesson-content{background:white;border:1px solid var(--line);border-radius:14px;padding:25px;line-height:1.75}.lesson-content h2{font:800 22px Manrope;line-height:1.3}.lesson-content h3{font:800 16px Manrope;margin-top:23px}.lesson-content p,.lesson-content li{color:#526157}.callout{background:#fff6e5;border-left:4px solid var(--orange);padding:13px 15px;border-radius:0 9px 9px 0;color:#6e542a;margin:16px 0}.quizbox{max-width:760px;margin:auto;background:white;border:1px solid var(--line);border-radius:16px;padding:25px}.quiz-top{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-bottom:13px}.question{font:800 20px/1.4 Manrope;margin:20px 0}.option{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:11px;padding:13px;margin:9px 0;cursor:pointer;line-height:1.5}.option:hover{border-color:#88b59a}.option.selected{border-color:var(--green);background:#edf6ef}.option input{margin-top:3px;accent-color:var(--green)}.quiz-controls{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.result{text-align:center;padding:22px}.score{font:800 48px Manrope;color:var(--green);margin:12px}.hidden{display:none!important}.toast{position:fixed;bottom:22px;right:22px;background:#173f32;color:white;padding:13px 17px;border-radius:10px;box-shadow:var(--shadow);z-index:99;opacity:0;transform:translateY(8px);transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}.empty{background:white;border:1px dashed #cad8cc;padding:25px;text-align:center;border-radius:12px;color:var(--muted)}.hamb{display:none}
+@media(max-width:1100px){.grid{grid-template-columns:1fr}.rightcol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.sidebar{width:210px}.main{margin-left:210px}.content,.wrap{padding:22px}}
+@media(max-width:760px){.sidebar{transform:translateX(-100%);transition:.25s;width:250px;box-shadow:10px 0 30px #0001}.sidebar.open{transform:translateX(0)}.main{margin-left:0}.hamb{display:block;border:0;background:white;font-size:20px}.top{padding:0 14px;height:62px}.top .user span:not(.avatar){display:none}.wrap{padding:17px}.heading{align-items:flex-start;flex-direction:column}.heading h1{font-size:23px}.hero{padding:23px;min-height:260px;background:linear-gradient(95deg,#e2f0e7f7,#e2f0e7dc),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80') center/cover}.hero h2{font-size:27px}.cards{grid-template-columns:1fr}.card-visual{height:145px}.material-list{grid-template-columns:1fr}.rightcol{grid-template-columns:1fr}.lesson-layout{grid-template-columns:1fr}.lesson-nav{display:flex;gap:5px;overflow:auto}.lesson-nav h3{display:none}.lesson-nav button{min-width:max-content}.lesson-content{padding:18px}.quizbox{padding:17px}.section-head{align-items:flex-start}.statgrid{max-width:420px}}
+
+/* Visual refinement: calmer, more welcoming, beginner-friendly */
+:root{
+ --green:#17664b;--deep:#123f32;--mint:#e8f4eb;--lime:#dff0c6;
+ --ink:#20332a;--muted:#718077;--line:#e8eee8;--bg:#f8faf7;
+ --shadow:0 12px 32px rgba(22,65,45,.07)
+}
+body{background:#f8faf7;color:#20332a;font-size:14px;letter-spacing:-.08px}
+.sidebar{background:linear-gradient(180deg,#123f32 0%,#0e3429 100%);padding:25px 14px 18px}
+.brand{padding:0 9px 31px}.logo{border-radius:14px;box-shadow:0 5px 15px #071f171f}
+.brand b{letter-spacing:-.6px}.nav button{padding:13px 12px;border-radius:12px;transition:background .18s,transform .18s}
+.nav button:hover{transform:translateX(2px)}.nav button.active{background:#28664d;box-shadow:inset 3px 0 #d9edb8}
+.nav button span:first-child{font-size:18px}
+.side-tip{background:#1a4b38;border-color:#316d50;padding:16px;border-radius:15px}
+.top{height:74px;padding:0 32px;box-shadow:0 3px 14px #173c2205}
+.search input{background:#f8faf8;border-color:#e6ece6;border-radius:13px;height:43px}
+.user{padding:7px 10px;border-radius:12px}.avatar{background:#e3f1e7}
+.wrap{padding:30px 32px 50px;max-width:1560px}
+.heading{margin-bottom:24px}.heading h1{font-size:29px;letter-spacing:-1.1px}.heading p{font-size:13px;color:#718077}
+.eyebrow{letter-spacing:1.6px;font-size:10px}
+.btn{border-radius:11px;padding:12px 17px;box-shadow:0 2px 0 #0d3424;transition:all .18s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 5px 12px #174f3b20}
+.btn.alt{box-shadow:none}.btn.alt:hover{background:#f0f7f1}
+.hero{min-height:285px;border-radius:22px;padding:34px 36px;margin-bottom:31px;
+ background:linear-gradient(100deg,rgba(230,244,235,.99) 0%,rgba(230,244,235,.95) 46%,rgba(230,244,235,.18) 100%),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=85') center/cover;
+ box-shadow:0 10px 30px #163e2708}
+.hero h2{font-size:clamp(29px,3vw,40px);line-height:1.12;letter-spacing:-1.5px;max-width:460px}
+.hero p{font-size:14px;line-height:1.75;max-width:410px;color:#4d6658}
+.hero .eyebrow{background:#fff9;padding:7px 10px;border-radius:7px;display:inline-block}
+.section{margin-bottom:32px}.section-head{margin-bottom:16px}.section h2{font-size:19px;letter-spacing:-.6px}.section-head p{font-size:12px}
+.cards{gap:16px}.card{border-color:#e6ece6;border-radius:17px;box-shadow:0 3px 12px #163e2703}
+.card:hover{box-shadow:0 14px 30px #163e2710;transform:translateY(-4px)}
+.card-visual{height:138px;font-size:48px}.card-visual.green{background:linear-gradient(135deg,#e0f1e4,#c9e4d0)}
+.card-visual.yellow{background:linear-gradient(135deg,#fff1d5,#f4dfae)}
+.card-visual.blue{background:linear-gradient(135deg,#e2eff6,#cbdfea)}
+.label{border-radius:7px;padding:6px 9px;letter-spacing:.4px;box-shadow:0 2px 8px #173c2208}
+.card-body{padding:16px}.card h3{font-size:14px;line-height:1.45;letter-spacing:-.3px}.card p{font-size:12px;line-height:1.65;min-height:39px}
+.meta{font-size:11px;margin-bottom:14px}.card .btn{box-shadow:none;padding:11px}
+.panel{border-color:#e7ede7;border-radius:17px;padding:20px;box-shadow:0 4px 18px #163e2704;margin-bottom:15px}
+.panel h3{font-size:15px;letter-spacing:-.3px}.panel p{font-size:12px;line-height:1.75}
+.stat{background:#f9fbf8;border-color:#edf1ec;border-radius:12px;padding:13px 4px}.stat strong{color:#17664b}
+.notice{border:1px solid #f2e4c7;background:#fff9ed;border-radius:13px;line-height:1.7;padding:16px}
+.material{border-radius:14px;padding:15px;border-color:#e7ede7;transition:.18s}.material:hover{border-color:#cbdccf;box-shadow:var(--shadow)}
+.quizrow{border-radius:14px;padding:16px}.lesson-nav,.lesson-content,.quizbox{border-radius:17px;border-color:#e6ece6;box-shadow:0 4px 18px #163e2704}
+.lesson-content{padding:30px;font-size:14px}.lesson-content h2{font-size:27px;letter-spacing:-.8px}.lesson-content p,.lesson-content li{line-height:1.85;color:#536359}
+.lesson-nav button{padding:12px;border-radius:10px;line-height:1.5}.lesson-nav button.active{background:#e9f4eb}
+.callout{background:#fff8e9;border-radius:0 12px 12px 0;line-height:1.75;padding:16px}
+.option{padding:15px;border-radius:13px;transition:.15s}.option.selected{background:#edf7ef;border-color:#4b8a68}
+.toast{border-radius:13px;padding:14px 18px}
+@media(max-width:760px){
+ .top{padding:0 13px}.wrap{padding:20px 15px 35px}.heading h1{font-size:25px}
+ .hero{min-height:285px;padding:24px;border-radius:18px}.hero h2{font-size:29px}
+ .card-visual{height:155px}.panel{padding:17px}.lesson-content{padding:20px}
+}
+
+/* ===== Kuis v5 ===== */
+.qz{max-width:820px;margin:0 auto;padding:0;background:#fffdf8;border:2px solid #16231c;border-radius:10px;box-shadow:7px 7px 0 #123f32}
+.qz-in{padding:34px 38px 36px;animation:qin .3s ease}
+@keyframes qin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.qz .eyebrow{color:var(--green)}
+.qz h2{font:800 34px/1.1 Manrope;letter-spacing:-1.4px;margin:6px 0 14px}
+.lead{font-size:15.5px;line-height:1.75;color:#44554b;max-width:560px;margin:0 0 24px}
+.btn.big{padding:15px 28px;font-size:14px;border-radius:9px}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.best{margin:14px 0 0;font-size:13px;font-weight:700;color:var(--green)}
+.qz h3{font:800 12px Manrope;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin:32px 0 10px}
+.mrow{display:flex;gap:14px;align-items:center;width:100%;text-align:left;background:none;border:0;border-top:1.5px solid #16231c1f;padding:14px 4px;transition:.15s}
+.mrow:last-child{border-bottom:1.5px solid #16231c1f}.mrow:hover{background:#eef6e0;padding-left:12px}
+.mn{font:800 13px Manrope;color:var(--green);width:26px}.mt{flex:1;font-weight:700;font-size:15px}.mc{font-size:12px;color:var(--muted);font-weight:600}
+.qz-top{display:flex;justify-content:space-between;gap:12px;font:800 11px Manrope;letter-spacing:1px;text-transform:uppercase;color:var(--green);margin-bottom:14px}.qz-top .sc{color:var(--muted)}
+.ruler{display:flex;gap:3px;margin-bottom:28px}.ruler i{flex:1;height:8px;background:#e5e9df;border-radius:2px}
+.ruler i.cur{background:#16231c}.ruler i.ok{background:#1f7a52}.ruler i.bad{background:#b8463f}
+.qn{font:800 14px Manrope;color:var(--muted)}.qn b{font-size:54px;letter-spacing:-3px;color:#16231c;line-height:1;margin-right:6px}
+.qz .question{font:700 22px/1.45 Manrope;letter-spacing:-.4px;margin:12px 0 22px}
+.opt{display:flex;gap:14px;align-items:center;width:100%;text-align:left;background:#fff;border:2px solid #16231c;border-radius:8px;padding:13px 15px;margin:0 0 10px;font-size:15px;line-height:1.5;color:var(--ink);transition:transform .12s,box-shadow .12s,background .12s}
+.opt:hover:not(:disabled){background:#eef6e0;transform:translate(-2px,-2px);box-shadow:3px 3px 0 #16231c}
+.opt:focus-visible,.btn:focus-visible,.mrow:focus-visible{outline:3px solid #9fd0b4;outline-offset:2px}
+.opt:disabled{cursor:default}
+.ltr{flex:none;width:30px;height:30px;border:2px solid #16231c;border-radius:6px;display:grid;place-items:center;font:800 13px Manrope;background:#fff;color:#16231c}
+.opt.ok{background:#1f7a52;border-color:#1f7a52;color:#fff}.opt.bad{background:#b8463f;border-color:#b8463f;color:#fff}
+.opt.ok .ltr,.opt.bad .ltr{border-color:#fff}.opt.ok .ltr{color:#1f7a52}.opt.bad .ltr{color:#b8463f}
+.opt.dim{opacity:.45;border-color:#16231c55}
+.fb{border-left:5px solid;padding:2px 0 2px 16px;margin:22px 0 0;animation:qin .25s}
+.fb.ok{border-color:#1f7a52}.fb.bad{border-color:#b8463f}
+.fb b{font:800 15px Manrope}.fb.ok b{color:#1f7a52}.fb.bad b{color:#b8463f}
+.fb p{margin:6px 0 8px;font-size:14px;line-height:1.7;color:#44554b}
+.fb .link,.rv-item .link{font-size:12.5px;padding:0;text-decoration:underline;text-underline-offset:3px}
+.qz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:26px;padding-top:20px;border-top:1.5px solid #16231c1f}
+.kbd{margin-top:14px;font-size:11px;color:#8a998f}
+.big-score{font:800 clamp(80px,16vw,128px)/.95 Manrope;letter-spacing:-6px;color:#16231c;margin:8px 0 14px}
+.big-score span{font-size:.38em;letter-spacing:-2px;color:var(--muted);margin-left:6px}
+.verdict{font-size:16px;line-height:1.7;color:#44554b;max-width:540px;margin:0}.verdict strong{color:#16231c}
+.mr2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 44px 92px;gap:14px;align-items:center;padding:12px 0;border-top:1.5px solid #16231c1f;font-size:14px;font-weight:700}
+.mbar{height:8px;background:#e5e9df;border-radius:2px;overflow:hidden}.mbar i{display:block;height:100%;background:#1f7a52}
+.mr2 .good{font-size:12px;color:#1f7a52}.mr2 .link{font-size:12px;text-align:left;padding:0;text-decoration:underline;text-underline-offset:3px}
+.res-actions{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 0}
+.rv-item{border-top:1.5px solid #16231c1f;padding:16px 0}
+.st{font:800 11px Manrope;letter-spacing:1px;text-transform:uppercase}.st.ok{color:#1f7a52}.st.bad{color:#b8463f}
+.rv-item b{display:block;font-size:14.5px;line-height:1.55;margin:4px 0 0}
+.rv-item p{margin:6px 0 0;font-size:13px;line-height:1.7;color:#5b6b61}.you{color:#b8463f;font-weight:700}.right{color:#1f7a52;font-weight:700}
+@media(prefers-reduced-motion:reduce){.qz-in,.fb{animation:none}.opt{transition:none}}
+@media(max-width:760px){.qz{box-shadow:4px 4px 0 #123f32}.qz-in{padding:22px 18px 26px}.qz h2{font-size:27px}.qz .question{font-size:19px}.qn b{font-size:44px}.mr2{grid-template-columns:1fr auto}.mr2 .mbar{grid-column:1/-1;order:3}.kbd{display:none}}
+/* ===== Modul v4 ===== */
+.crumb{font-size:12px;color:var(--muted);margin-bottom:14px;display:flex;gap:8px;align-items:center}
+.crumb button{border:0;background:none;color:var(--green);font-weight:700;padding:0;font-size:12px}
+.mod-hero{display:flex;gap:22px;align-items:center;border-radius:24px;padding:30px 34px;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 12px 32px #163e2710}
+.mod-hero.green{background:linear-gradient(120deg,#dff1e4,#bfe0c9)}.mod-hero.yellow{background:linear-gradient(120deg,#fff3d9,#f2dca8)}.mod-hero.blue{background:linear-gradient(120deg,#e3f0f7,#c2dbe8)}
+.mod-hero:after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:#ffffff59}
+.mod-emoji{flex:none;width:96px;height:96px;border-radius:28px;background:#fff;display:grid;place-items:center;font-size:50px;box-shadow:0 10px 24px #163e271a;transform:rotate(-5deg);z-index:1}
+.mod-hero h1{font:800 clamp(24px,3vw,34px)/1.2 Manrope;letter-spacing:-1px;margin:4px 0 12px;color:#123f30}
+.mod-hero>div:last-child{z-index:1}
+.chips .chip.ok{background:#2b9468;color:#fff;border-color:#2b9468}
+.mod-hero .chips{justify-content:flex-start;margin:0}
+.mod-grid{display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;align-items:start}
+.toc{position:sticky;top:92px;background:#fff;border:1px solid var(--line);border-radius:17px;padding:14px;box-shadow:0 4px 18px #163e2704}
+.toc h4{font:800 11px Manrope;letter-spacing:1.3px;color:var(--muted);margin:2px 8px 8px;text-transform:uppercase}
+.toc button{display:flex;gap:9px;width:100%;text-align:left;border:0;background:none;padding:9px 8px;border-radius:9px;font-size:12px;line-height:1.4;color:#4b5f54;font-weight:600}
+.toc button:hover{background:var(--mint);color:var(--green)}.toc button b{color:var(--green)}
+.mod-intro{font-size:16px;line-height:1.85;color:#44574c;background:#fff;border:1px solid var(--line);border-left:5px solid #2b9468;border-radius:17px;padding:22px 24px;margin-bottom:16px}
+.sec-card{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px;margin-bottom:14px;scroll-margin-top:92px;box-shadow:0 4px 18px #163e2704}
+.sec-num{flex:none;width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#17664b,#2b9468);color:#fff;display:grid;place-items:center;font:800 16px Manrope;box-shadow:0 6px 14px #17664b30}
+.sec-card h3{font:800 17px Manrope;letter-spacing:-.4px;margin:6px 0 8px}.sec-card p{margin:0;line-height:1.85;color:#536359}
+.keybox{background:linear-gradient(135deg,#fff8e9,#fff2d3);border:1px solid #f2e0b4;border-radius:17px;padding:20px 22px;margin:20px 0}
+.keybox h3{font:800 16px Manrope;margin:0 0 10px;color:#6e4a12}.keybox li{list-style:none;padding:6px 0 6px 28px;position:relative;line-height:1.65;color:#6e542a}
+.keybox li:before{content:"✓";position:absolute;left:0;top:6px;width:20px;height:20px;border-radius:50%;background:#d88a35;color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center}
+.keybox ul{margin:0;padding:0}
+.mod-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pn button{text-align:left;background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 17px;transition:.18s}
+.pn button:hover{border-color:#76a98b;transform:translateY(-2px);box-shadow:var(--shadow)}
+.pn small{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}.pn b{font:800 14px Manrope}.pn .nx{text-align:right;grid-column:2}
+.mcard .state{position:absolute;top:10px;right:10px;background:#2b9468;color:#fff;border-radius:7px;padding:5px 9px;font-size:10px;font-weight:800}
+.overall{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px 22px;margin-bottom:20px}
+.overall .bar{flex:1}.overall b{font:800 14px Manrope;white-space:nowrap}
+#readbar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#2b9468,#d9edb8);z-index:50;transition:width .1s}
+@media(max-width:900px){.mod-grid{grid-template-columns:1fr}.toc{position:static;display:flex;gap:6px;overflow:auto;padding:10px}.toc h4{display:none}.toc button{min-width:max-content}}
+@media(max-width:760px){.mod-hero{flex-direction:column;align-items:flex-start;padding:24px 20px}.mod-emoji{width:76px;height:76px;font-size:40px}.sec-card{padding:17px;gap:13px}.pn{grid-template-columns:1fr}.pn .nx{grid-column:auto}.overall{flex-direction:column;align-items:stretch;gap:10px}}
+
+/* ===== Responsive v6 (override layer) ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+:root{--topH:74px;--topFull:calc(var(--topH) + env(safe-area-inset-top,0px));--pad:clamp(15px,3.2vw,32px)}
+body{overflow-x:clip;-webkit-tap-highlight-color:transparent}
+.layout{min-height:100vh;min-height:100dvh}
+.main{min-width:0}.grid>*{min-width:0}
+.sidebar{overflow-y:auto;overscroll-behavior:contain;padding-bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+.scrim{display:none;position:fixed;inset:0;z-index:6;background:#0a1f1773;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.top{height:var(--topFull);padding-top:env(safe-area-inset-top,0px);padding-left:max(var(--pad),env(safe-area-inset-left,0px));padding-right:max(var(--pad),env(safe-area-inset-right,0px))}
+.search{min-width:0}.search span{top:50%;transform:translateY(-50%);pointer-events:none}.search input{text-overflow:ellipsis}
+.wrap{padding:clamp(18px,3vw,30px) var(--pad) calc(40px + env(safe-area-inset-bottom,0px));padding-left:max(var(--pad),env(safe-area-inset-left,0px));padding-right:max(var(--pad),env(safe-area-inset-right,0px))}
+.heading>div{min-width:0}
+.cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.toc{top:calc(var(--topFull) + 18px)}
+.sec-card{scroll-margin-top:calc(var(--topFull) + 18px)}
+.sec-card>div:last-child,.mod-hero>div:last-child,.material>div,.quizrow>div{min-width:0}
+.sec-card p,.mod-intro,.lesson-content,.opt span,.question,.fb p,.rv-item b,.rv-item p,.card h3,.card p{overflow-wrap:break-word}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{display:inline-flex;align-items:center;gap:4px;background:#ffffffb3;border:1px solid #16231c1a;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700;color:#2f4a3c;white-space:nowrap}
+#checklist label{align-items:flex-start;line-height:1.55}
+#checklist input{flex:none;width:20px;height:20px;margin:1px 0 0;accent-color:var(--green)}
+#checklist .btn{margin-top:14px}
+.opt span{min-width:0}
+.qz-in{padding:clamp(20px,4vw,38px) clamp(18px,4.5vw,38px) clamp(24px,4vw,36px)}
+.qz-top{flex-wrap:wrap}
+.qz-nav .btn,.res-actions .btn{white-space:normal}
+.toast{max-width:min(420px,calc(100vw - 24px));bottom:calc(22px + env(safe-area-inset-bottom,0px));right:max(22px,env(safe-area-inset-right,0px))}
+
+/* >=901px: bacaan modul tetap nyaman dibaca di layar lebar */
+@media(min-width:901px){.mod-grid{grid-template-columns:210px minmax(0,860px);justify-content:center}}
+
+/* Tablet & di bawahnya: sidebar jadi drawer */
+@media(max-width:900px){
+ :root{--topH:64px}
+ .sidebar{transform:translateX(-102%);visibility:hidden;transition:transform .28s ease,visibility .28s;width:min(290px,86vw);box-shadow:none;z-index:7;padding-left:calc(14px + env(safe-area-inset-left,0px))}
+ .sidebar.open{transform:none;visibility:visible;box-shadow:14px 0 40px #0a1f1740}
+ .scrim{display:block}
+ body.nav-open{overflow:hidden}
+ body.nav-open .scrim{opacity:1;visibility:visible}
+ .main{margin-left:0}
+ .hamb{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:20px;line-height:1}
+ .top{gap:10px;background:#fffffff7}
+ .search input{font-size:16px}
+ .mod-grid{display:block}
+ .toc{position:sticky;top:var(--topFull);z-index:3;margin:0 calc(var(--pad) * -1) 16px;padding:8px var(--pad);border-radius:0;border-width:1px 0;box-shadow:0 6px 14px #163e2708;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ .toc::-webkit-scrollbar{display:none}
+ .toc button{white-space:nowrap}
+ .sec-card{scroll-margin-top:calc(var(--topFull) + 70px)}
+}
+
+/* Kartu 2 kolom: kartu ganjil terakhir dibuat melebar agar tidak yatim */
+@media(min-width:561px) and (max-width:1100px){
+ .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .cards>.card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(140px,36%) 1fr}
+ .cards>.card:last-child:nth-child(odd) .card-visual{height:auto;min-height:150px}
+}
+@media(min-width:561px) and (max-width:760px){
+ .hero{min-height:260px}
+}
+
+@media(max-width:760px){
+ .hero{background-image:linear-gradient(180deg,rgba(230,244,235,.97) 0%,rgba(230,244,235,.9) 100%),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80')}
+ .hero h2{max-width:none}.hero p{max-width:none}
+ .heading>.btn{align-self:stretch}
+ .overall .bar{flex:0 0 8px;min-height:8px;width:100%}
+ .mr2{grid-template-columns:minmax(0,1fr) auto;row-gap:8px}
+ .mr2>:nth-child(1){grid-column:1;grid-row:1}.mr2>:nth-child(3){grid-column:2;grid-row:1}
+ .mr2 .mbar{grid-column:1/-1;grid-row:2;order:0}.mr2>:nth-child(4){grid-column:1/-1;grid-row:3}
+ .mod-intro{font-size:15px;padding:18px}
+ .stat small{font-size:10.5px}.label{font-size:10px}
+ .keybox{padding:18px}
+}
+
+@media(max-width:560px){
+ .cards{grid-template-columns:1fr}
+ .actions .btn,.mod-actions .btn,.res-actions .btn,#checklist .btn{flex:1 1 100%;width:100%}
+ .qz-nav{flex-wrap:wrap}.qz-nav .btn{flex:1 1 130px}
+ .qz-top{gap:4px 12px}
+ .toast{left:12px;right:12px;max-width:none;text-align:center}
+ .statgrid{max-width:none}
+ .mrow{gap:10px}.mt{font-size:14px}.mc{white-space:nowrap}
+}
+@media(max-width:380px){
+ .heading h1{font-size:22px}.hero{padding:20px 17px}.hero h2{font-size:25px}
+ .qz h2{font-size:24px}.qz .question{font-size:17.5px}.opt{padding:11px 12px;gap:10px;font-size:14px}
+ .ltr{width:28px;height:28px}.qn b{font-size:38px}
+ .mod-hero{padding:20px 16px}.sec-card{padding:15px;gap:11px}.sec-num{width:34px;height:34px;border-radius:11px}
+}
+
+/* Layar landscape pendek (HP diputar) */
+@media(max-height:480px) and (orientation:landscape){
+ :root{--topH:56px}
+ .hero{min-height:0}.card-visual{height:110px}.qz-in{padding-top:20px}
+}
+
+/* Perangkat sentuh: target tap >= 44px, tanpa efek hover yang "menempel" */
+@media(pointer:coarse){
+ .btn{min-height:44px}.nav button{min-height:46px}
+ .lesson-nav button,.toc button{min-height:44px;align-items:center}
+ .link,.crumb button,.material button{display:inline-flex;align-items:center;min-height:40px;text-align:left}
+ .opt{min-height:52px}.mrow{min-height:56px}.pn button{min-height:64px}
+ #checklist input{width:22px;height:22px}
+ #checklist label{padding-top:12px!important;padding-bottom:12px!important}
+}
+@media(hover:none){
+ .card:hover,.btn:hover,.pn button:hover,.nav button:hover{transform:none}
+ .card:hover{box-shadow:0 3px 12px #163e2703}
+ .opt:hover:not(:disabled){background:#fff;transform:none;box-shadow:none}
+ .mrow:hover{background:none;padding-left:4px}
+ .btn:active,.opt:active:not(:disabled),.card:active{transform:scale(.985)}
+}
+@media(prefers-reduced-motion:reduce){.sidebar,.scrim,.card,.btn{transition:none!important}html{scroll-behavior:auto}}
+
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="scrim" id="scrim"></div>
+<aside class="sidebar" id="sidebar">
+ <div class="brand"><div class="logo">K3</div><div><b>RuangK3</b><small>Belajar aman untuk anak PPLG</small></div></div>
+ <nav class="nav">
+  <button class="active" data-page="home"><span>⌂</span> Beranda</button>
+  <button data-page="courses"><span>▦</span> Katalog Materi</button>
+  <button data-page="lesson"><span>▤</span> Materi Saya</button>
+  <button data-page="quiz"><span>☑</span> Kuis K3</button>
+  <button data-page="about"><span>ⓘ</span> Tentang K3</button>
+ </nav>
+ <div class="side-tip"><b>Keselamatan dimulai dari kebiasaan kecil.</b><p>Atur posisi kerja, jaga kabel tetap rapi, dan istirahatkan mata secara berkala.</p></div>
+ <div class="side-foot">K3 untuk PPLG · Versi demo pembelajaran</div>
+</aside>
+<main class="main">
+<header class="top"><button class="hamb" id="hamb" aria-label="Buka menu" aria-controls="sidebar" aria-expanded="false">☰</button><div class="search"><span>⌕</span><input id="search" placeholder="Cari materi K3 untuk PPLG..." aria-label="Cari materi"></div><div class="user"><div class="avatar">👩‍💻</div><span><b>Peserta PPLG</b><br><small style="color:var(--muted)">Siswa</small></span></div></header>
+<div class="wrap">
+<section class="page active" id="page-home">
+ <div class="heading"><div><div class="eyebrow">Ruang belajar digital</div><h1>Yuk, belajar K3 dengan cara yang mudah 👋</h1><p>Kenali cara menjaga diri dan teman saat belajar coding, menggunakan komputer, dan praktik di lab.</p></div><button class="btn" onclick="go('courses')">Mulai belajar ↗</button></div>
+ <div class="grid"><div>
+  <div class="hero"><div class="hero-copy"><div class="eyebrow">Keselamatan kerja untuk PPLG</div><h2>Belajar coding dengan nyaman.<br>Utamakan keselamatan.</h2><p>Mulai dari hal sederhana: posisi duduk, kabel yang rapi, mata yang beristirahat, dan lab yang aman.</p><div class="actions"><button class="btn" onclick="go('lesson')">Pelajari materi pertama →</button><button class="btn alt" onclick="go('quiz')">Coba kuis</button></div></div></div>
+  <div class="section"><div class="section-head"><div><h2>Materi pilihan</h2><p>Topik K3 yang dekat dengan kegiatan PPLG.</p></div><button class="link" onclick="go('courses')">Lihat semua →</button></div>
+   <div class="cards">
+    <article class="card"><div class="card-visual green"><span class="label">MULAI DI SINI</span>🧑‍💻</div><div class="card-body"><h3>Ergonomi di Depan Komputer</h3><p>Atur kursi, monitor, keyboard, dan kebiasaan istirahat yang tepat.</p><div class="meta"><span>◷ 8 menit</span><span>• Dasar</span></div><button class="btn" onclick="openLesson('ergonomi')">Buka materi →</button></div></article>
+    <article class="card"><div class="card-visual yellow"><span class="label">PENTING</span>🔌</div><div class="card-body"><h3>Keselamatan Listrik & Kabel</h3><p>Kenali kabel rusak, stopkontak bertumpuk, dan risiko perangkat.</p><div class="meta"><span>◷ 10 menit</span><span>• Dasar</span></div><button class="btn" onclick="openLesson('listrik')">Buka materi →</button></div></article>
+    <article class="card"><div class="card-visual blue"><span class="label">KEBIASAAN SEHAT</span>👁️</div><div class="card-body"><h3>Kesehatan Mata & Istirahat</h3><p>Kurangi ketegangan mata dan kelelahan saat belajar atau coding.</p><div class="meta"><span>◷ 6 menit</span><span>• Dasar</span></div><button class="btn" onclick="openLesson('mata')">Buka materi →</button></div></article>
+   </div>
+  </div>
+  <div class="section"><div class="section-head"><div><h2>Checklist sebelum mulai praktik</h2><p>Pemeriksaan singkat sebelum menggunakan lab komputer.</p></div></div>
+   <div class="panel" id="checklist"><label style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)"><input type="checkbox"> Area meja dan jalur berjalan bebas dari barang yang menghalangi.</label><label style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)"><input type="checkbox"> Kabel dan adaptor terlihat utuh, tidak terkelupas.</label><label style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)"><input type="checkbox"> Tangan kering saat menyentuh perangkat listrik.</label><label style="display:flex;gap:10px;padding:10px 0"><input type="checkbox"> Posisi duduk dan layar sudah nyaman.</label><button class="btn small" onclick="saveChecklist()">Simpan checklist</button></div>
+  </div>
+ </div>
+ <aside class="rightcol">
+  <div class="panel"><h3>Progres belajarmu</h3><div class="progress-row"><span>Materi selesai</span><span id="progressText">0%</span></div><div class="bar"><i id="progressBar" style="width:0%"></i></div><div class="statgrid"><div class="stat"><strong id="doneCount">0</strong><small>Materi selesai</small></div><div class="stat"><strong id="quizCount">0</strong><small>Kuis selesai</small></div><div class="stat"><strong>4</strong><small>Topik inti</small></div></div></div>
+  <div class="panel"><h3>Kenapa K3 penting untuk PPLG?</h3><p>PPLG bukan cuma soal menulis kode. Kamu juga menggunakan komputer, perangkat listrik, bekerja berjam-jam, dan berkolaborasi di ruang praktik. K3 membantu mengurangi risiko dan membangun kebiasaan profesional.</p></div>
+  <div class="notice"><b>⚠️ Ingat</b>Jika menemukan kabel rusak, bau terbakar, percikan, atau perangkat terlalu panas, jangan mencoba memperbaikinya sendiri. Hentikan penggunaan jika aman dilakukan dan laporkan kepada guru atau petugas yang berwenang.</div>
+ </aside></div>
+</section>
+<section class="page" id="page-courses">
+ <div class="heading"><div><div class="eyebrow">Perpustakaan materi</div><h1>Katalog materi K3</h1><p>Pilih topik sesuai kebutuhanmu di lab PPLG.</p></div></div>
+ <div class="cards" id="catalog">
+ <article class="card" data-search="ergonomi komputer postur duduk monitor keyboard"><div class="card-visual green">🧑‍💻</div><div class="card-body"><h3>Ergonomi di Depan Komputer</h3><p>Postur, posisi monitor, meja, kursi, dan peregangan.</p><div class="meta">8 menit · Dasar</div><button class="btn" onclick="openLesson('ergonomi')">Pelajari</button></div></article>
+ <article class="card" data-search="listrik kabel stopkontak perangkat komputer"><div class="card-visual yellow">🔌</div><div class="card-body"><h3>Keselamatan Listrik & Kabel</h3><p>Pencegahan risiko listrik dan pengelolaan kabel.</p><div class="meta">10 menit · Dasar</div><button class="btn" onclick="openLesson('listrik')">Pelajari</button></div></article>
+ <article class="card" data-search="mata istirahat kelelahan layar"><div class="card-visual blue">👁️</div><div class="card-body"><h3>Kesehatan Mata & Istirahat</h3><p>Kebiasaan sehat saat menatap layar dalam waktu lama.</p><div class="meta">6 menit · Dasar</div><button class="btn" onclick="openLesson('mata')">Pelajari</button></div></article>
+ <article class="card" data-search="kebakaran evakuasi darurat lab"><div class="card-visual yellow">🧯</div><div class="card-body"><h3>Kebakaran & Keadaan Darurat</h3><p>Kenali jalur evakuasi, alarm, dan prosedur pelaporan.</p><div class="meta">9 menit · Menengah</div><button class="btn" onclick="openLesson('darurat')">Pelajari</button></div></article>
+ <article class="card" data-search="lingkungan kerja rapi housekeeping tersandung"><div class="card-visual green">🧹</div><div class="card-body"><h3>Lingkungan Lab yang Aman</h3><p>Menjaga meja, jalur jalan, dan area perangkat tetap rapi.</p><div class="meta">5 menit · Dasar</div><button class="btn" onclick="openLesson('lab')">Pelajari</button></div></article>
+ <article class="card" data-search="stres istirahat kerja tim deadline kesehatan mental"><div class="card-visual blue">🧠</div><div class="card-body"><h3>Kelelahan & Kebiasaan Kerja</h3><p>Jeda kerja, pengelolaan tugas, dan komunikasi saat praktik.</p><div class="meta">7 menit · Dasar</div><button class="btn" onclick="openLesson('lelah')">Pelajari</button></div></article>
+ </div>
+ <div id="noResults" class="empty hidden">Materi tidak ditemukan. Coba kata kunci lain.</div>
+</section>
+<section class="page" id="page-lesson"><div id="lessonView"></div></section>
+<section class="page" id="page-quiz">
+ <div class="heading"><div><div class="eyebrow">Uji pemahaman</div><h1>Kuis K3 untuk PPLG</h1><p>Soal diambil langsung dari isi modul. Jawab, lihat penjelasannya, lalu baca ulang bagian yang masih kurang.</p></div></div>
+ <div class="quizbox qz" id="quizApp"></div>
+</section>
+<section class="page" id="page-about">
+ <div class="heading"><div><div class="eyebrow">Tentang platform</div><h1>K3 yang dekat dengan dunia PPLG</h1><p>Keselamatan dan kesehatan kerja untuk kegiatan belajar, praktik, dan persiapan memasuki dunia kerja.</p></div></div>
+ <div class="panel"><h3>Apa itu K3?</h3><p>Keselamatan dan Kesehatan Kerja (K3) adalah upaya untuk melindungi keselamatan dan kesehatan orang di lingkungan kerja melalui pengenalan bahaya, pengendalian risiko, dan kebiasaan kerja yang aman.</p><h3 style="margin-top:22px">Contoh penerapan K3 untuk PPLG</h3><ul style="color:var(--muted);line-height:1.9"><li>Menata kabel dan adaptor agar tidak menjadi bahaya tersandung atau listrik.</li><li>Mengatur posisi duduk, monitor, keyboard, dan mouse.</li><li>Memberi jeda saat bekerja lama di depan layar.</li><li>Menjaga makanan dan minuman jauh dari perangkat listrik.</li><li>Melaporkan perangkat rusak kepada guru atau teknisi.</li><li>Mengetahui jalur evakuasi serta prosedur keadaan darurat di sekolah.</li></ul><div class="notice"><b>Catatan edukasi</b>Website ini merupakan media belajar, bukan sertifikasi K3 resmi atau pengganti instruksi guru, SOP sekolah, pelatihan resmi, maupun petugas K3 yang berwenang.</div></div>
+</section>
+</div></main></div><div class="toast" id="toast" role="status"></div>
+<script>
+const lessons={
+ergonomi:{title:'Ergonomi di Depan Komputer',intro:'Ergonomi adalah penyesuaian pekerjaan, peralatan, dan lingkungan agar sesuai dengan kebutuhan manusia. Tujuannya membantu mengurangi ketidaknyamanan dan risiko gangguan akibat postur atau gerakan berulang.',sections:[['Atur posisi duduk','Duduk dengan punggung tersangga, bahu rileks, dan kaki mendapat tumpuan. Sesuaikan kursi atau gunakan pijakan yang stabil jika kaki menggantung. Hindari mempertahankan satu posisi terlalu lama.'],['Atur layar dan perangkat','Letakkan monitor tepat di depan dan pada jarak yang nyaman. Bagian atas layar umumnya berada sekitar tinggi mata atau sedikit di bawahnya. Letakkan keyboard dan mouse dekat tubuh agar bahu tidak terus menjulur.'],['Ambil jeda dan bergerak','Ubah posisi secara berkala, berdiri atau lakukan peregangan ringan ketika memungkinkan. Sesuaikan jeda dengan kebutuhan dan aturan di kelas atau tempat kerja.'],['Contoh di lab PPLG','Saat coding selama dua jam, seorang siswa mulai membungkuk dan pergelangan tangannya terasa tidak nyaman. Tindakan yang tepat adalah memperbaiki posisi, mengambil jeda, dan memberi tahu guru jika keluhan berlanjut.']]},
+listrik:{title:'Keselamatan Listrik & Kabel',intro:'Komputer, monitor, charger, dan perangkat jaringan membutuhkan listrik. Kabel rusak, sambungan berlebihan, cairan, atau penggunaan yang tidak sesuai dapat meningkatkan risiko sengatan dan kebakaran.',sections:[['Periksa sebelum digunakan','Perhatikan kabel yang terkelupas, steker longgar, bau terbakar, percikan, atau perangkat yang tidak normal. Jangan gunakan perangkat yang tampak rusak.'],['Rapikan jalur kabel','Jauhkan kabel dari jalur berjalan dan area yang mudah terinjak atau tertarik. Gunakan pengelolaan kabel yang sesuai dan jangan menarik kabel untuk mencabut steker.'],['Hindari cairan dan sambungan berlebihan','Jauhkan minuman dari komputer dan stopkontak. Jangan menumpuk adaptor atau stopkontak melebihi kapasitasnya. Jangan menyentuh perangkat listrik dengan tangan basah.'],['Jika ada kondisi berbahaya','Jangan menyentuh kabel terbuka atau mencoba memperbaikinya sendiri. Jauhi area, beri tahu guru atau petugas, dan ikuti prosedur darurat sekolah.']]},
+mata:{title:'Kesehatan Mata & Istirahat',intro:'Belajar coding mengharuskan mata fokus pada layar dalam waktu lama. Pencahayaan, silau, jarak pandang, dan kurangnya jeda dapat menambah rasa lelah atau tidak nyaman.',sections:[['Kurangi silau','Atur kecerahan layar sesuai kondisi ruangan. Hindari pantulan lampu atau jendela langsung pada layar dan pastikan teks dapat dibaca dengan nyaman.'],['Gunakan jeda visual','Coba aturan 20-20-20 sebagai pengingat: setiap 20 menit, lihat objek sekitar 20 kaki atau 6 meter selama 20 detik. Ini panduan praktis, bukan pengganti pemeriksaan medis.'],['Jangan abaikan keluhan','Jika mata terasa kering atau lelah, berkediplah secara wajar dan ambil jeda. Jika keluhan sering muncul atau menetap, sampaikan kepada orang tua/guru dan cari saran tenaga kesehatan.']]},
+darurat:{title:'Kebakaran & Keadaan Darurat',intro:'Setiap siswa perlu mengetahui cara melaporkan keadaan darurat dan mengikuti rencana evakuasi yang berlaku di sekolah atau tempat praktik.',sections:[['Kenali lingkungan','Ketahui lokasi pintu keluar, jalur evakuasi, titik kumpul, alarm, dan cara menghubungi petugas sesuai arahan sekolah. Jangan menghalangi akses keluar.'],['Jika melihat asap atau api','Segera beri peringatan dan laporkan sesuai prosedur. Evakuasi melalui jalur aman, jangan menggunakan lift jika ada, dan jangan kembali mengambil barang.'],['Jangan mengambil risiko','Jangan mencoba memadamkan api jika tidak terlatih atau situasinya tidak aman. Penggunaan APAR hanya oleh orang yang telah diberi instruksi dan bila jalur keluar tetap aman. Ikuti arahan petugas.']]},
+lab:{title:'Lingkungan Lab yang Aman',intro:'Area praktik yang tertata membantu mengurangi risiko tersandung, kerusakan perangkat, dan gangguan saat proses belajar.',sections:[['Jaga jalur tetap bebas','Simpan tas di tempat yang ditentukan. Jangan meletakkan kabel, kursi, atau barang di jalur keluar dan jalur berjalan.'],['Gunakan perangkat dengan benar','Ikuti instruksi guru untuk menyalakan, memindahkan, atau membersihkan perangkat. Jangan membuka casing komputer atau melakukan perbaikan tanpa izin dan kompetensi.'],['Tinggalkan meja dengan rapi','Setelah praktik, rapikan alat sesuai arahan, laporkan kerusakan, dan matikan perangkat berdasarkan prosedur yang ditetapkan sekolah.']]},
+lelah:{title:'Kelelahan & Kebiasaan Kerja',intro:'Tugas coding, debugging, dan deadline dapat membuat seseorang lupa beristirahat. Kebiasaan kerja yang terencana mendukung keselamatan, konsentrasi, dan kualitas hasil.',sections:[['Atur pekerjaan','Pecah tugas besar menjadi bagian yang lebih kecil. Sepakati prioritas dan minta bantuan saat menemui hambatan yang tidak dapat diselesaikan sendiri.'],['Komunikasi dalam tim','Sampaikan kondisi yang mengganggu konsentrasi atau keselamatan. Jangan menutupi masalah perangkat hanya demi mengejar deadline.'],['Jaga keseimbangan','Ambil jeda sesuai kebutuhan, cukup minum, dan jaga rutinitas istirahat. Jika merasa sangat lelah, beri tahu guru atau pembimbing agar tugas dapat ditangani dengan aman.']]}
+};
+const store={get(k,d){try{const v=localStorage.getItem(k);return v===null?d:v}catch(e){return d}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+let completed=new Set((()=>{try{return JSON.parse(store.get('rk3done','[]'))}catch(e){return[]}})()), quizDone=Number(store.get('rk3quiz',0))||0, currentLesson='ergonomi';
+let lessonKey=null,opening=false;
+function go(page,keep){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+page).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));setNav(false);if(!keep)window.scrollTo({top:0,behavior:'smooth'});
+ if(page==='lesson'&&!opening){lessonKey=null;renderModules()}
+ if(page!=='lesson'&&location.hash){try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
+ if(page==='quiz')renderQuiz();updateReadBar()}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function setNav(o){document.getElementById('sidebar').classList.toggle('open',o);document.body.classList.toggle('nav-open',o);const h=document.getElementById('hamb');h.setAttribute('aria-expanded',o);h.setAttribute('aria-label',o?'Tutup menu':'Buka menu')}
+document.getElementById('hamb').onclick=()=>setNav(!document.getElementById('sidebar').classList.contains('open'));
+document.getElementById('scrim').onclick=()=>setNav(false);
+addEventListener('keydown',e=>{if(e.key==='Escape')setNav(false)});
+matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)setNav(false)});
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2300)}
+function updateProgress(){let n=completed.size,p=Math.round(n/6*100);document.getElementById('doneCount').textContent=n;document.getElementById('progressText').textContent=p+'%';document.getElementById('progressBar').style.width=p+'%';document.getElementById('quizCount').textContent=quizDone;store.set('rk3done',JSON.stringify([...completed]))}
+const LMETA={
+ergonomi:{e:'🧑‍💻',c:'green',t:'8 menit',l:'Dasar',k:['Punggung tersangga, bahu rileks, kaki punya tumpuan.','Monitor tepat di depan, keyboard dan mouse dekat tubuh.','Ubah posisi dan bergerak secara berkala.']},
+listrik:{e:'🔌',c:'yellow',t:'10 menit',l:'Dasar',k:['Periksa kabel dan steker sebelum dipakai.','Jauhkan cairan dari perangkat dan stopkontak.','Kabel rusak: jangan disentuh, segera laporkan.']},
+mata:{e:'👁️',c:'blue',t:'6 menit',l:'Dasar',k:['Kurangi silau dan sesuaikan kecerahan layar.','Aturan 20-20-20 sebagai pengingat jeda visual.','Keluhan yang menetap perlu disampaikan dan diperiksa.']},
+darurat:{e:'🧯',c:'yellow',t:'9 menit',l:'Menengah',k:['Hafalkan pintu keluar, jalur evakuasi, dan titik kumpul.','Ada asap atau api: peringatkan, laporkan, lalu evakuasi.','Jangan kembali mengambil barang dan jangan memadamkan api tanpa pelatihan.']},
+lab:{e:'🧹',c:'green',t:'5 menit',l:'Dasar',k:['Jalur jalan dan jalur keluar harus selalu bebas.','Ikuti instruksi guru saat memindahkan atau membersihkan perangkat.','Rapikan meja dan laporkan kerusakan setelah praktik.']},
+lelah:{e:'🧠',c:'blue',t:'7 menit',l:'Dasar',k:['Pecah tugas besar menjadi bagian kecil.','Sampaikan masalah perangkat, jangan ditutupi demi deadline.','Istirahat dan minum cukup, beri tahu guru jika sangat lelah.']}};
+function renderModules(){const keys=Object.keys(lessons),n=completed.size,p=Math.round(n/keys.length*100);
+ document.getElementById('lessonView').innerHTML=`<div class="heading"><div><div class="eyebrow">Modul pembelajaran</div><h1>Materi Saya</h1><p>Pilih satu modul, baca dengan santai, lalu tandai selesai.</p></div><button class="btn alt" onclick="go('quiz')">Coba kuis →</button></div>
+ <div class="overall"><b>${n} dari ${keys.length} modul selesai</b><div class="bar"><i style="width:${p}%"></i></div><b>${p}%</b></div>
+ <div class="cards">${keys.map((k,i)=>{const m=LMETA[k],l=lessons[k];return `<article class="card mcard"><div class="card-visual ${m.c}"><span class="label">MODUL ${i+1}</span>${completed.has(k)?'<span class="state">✓ Selesai</span>':''}${m.e}</div><div class="card-body"><h3>${l.title}</h3><p>${l.intro.split('. ')[0].slice(0,110)}…</p><div class="meta"><span>◷ ${m.t}</span><span>• ${m.l}</span><span>• ${l.sections.length} bagian</span></div><button class="btn" onclick="openLesson('${k}')">${completed.has(k)?'Baca lagi':'Mulai modul'} →</button></div></article>`}).join('')}</div>`}
+function openLesson(key,keep){const l=lessons[key],m=LMETA[key];if(!l)return;lessonKey=key;opening=true;
+ const keys=Object.keys(lessons),i=keys.indexOf(key),done=completed.has(key),pv=keys[i-1],nx=keys[i+1];
+ try{if(location.hash!=='#/materi/'+key)history.pushState(null,'','#/materi/'+key)}catch(e){}
+ document.getElementById('lessonView').innerHTML=`<div class="crumb"><button onclick="go('lesson')">Materi Saya</button><span>›</span><span>${l.title}</span></div>
+ <div class="mod-hero ${m.c}"><div class="mod-emoji">${m.e}</div><div><div class="eyebrow">Modul ${i+1} dari ${keys.length}</div><h1>${l.title}</h1><div class="chips"><span class="chip">◷ ${m.t}</span><span class="chip">${m.l}</span><span class="chip">${l.sections.length} bagian</span>${done?'<span class="chip ok">✓ Selesai</span>':''}</div></div></div>
+ <div class="mod-grid"><aside class="toc"><h4>Di modul ini</h4>${l.sections.map((s,j)=>`<button onclick="document.getElementById('s${j}').scrollIntoView({behavior:'smooth',block:'start'})"><b>${j+1}</b><span>${s[0]}</span></button>`).join('')}</aside>
+ <div><p class="mod-intro">${l.intro}</p>${l.sections.map((s,j)=>`<section class="sec-card" id="s${j}"><div class="sec-num">${j+1}</div><div><h3>${s[0]}</h3><p>${s[1]}</p></div></section>`).join('')}
+ <div class="keybox"><h3>💡 Poin kunci</h3><ul>${m.k.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+ <div class="mod-actions"><button class="btn" onclick="markComplete('${key}')" ${done?'disabled':''}>${done?'✓ Materi selesai':'Tandai materi selesai'}</button><button class="btn alt" onclick="quizFromModule('${key}')">Kuis modul ini (${nq(key)} soal) →</button></div>
+ <div class="pn">${pv?`<button onclick="openLesson('${pv}')"><small>← Sebelumnya</small><b>${lessons[pv].title}</b></button>`:'<span></span>'}${nx?`<button class="nx" onclick="openLesson('${nx}')"><small>Selanjutnya →</small><b>${lessons[nx].title}</b></button>`:''}</div></div></div>`;
+ go('lesson',keep);opening=false}
+function markComplete(key){completed.add(key);updateProgress();openLesson(key,true);toast('Mantap! Progres modul disimpan di perangkat ini.')}
+function updateReadBar(){const b=document.getElementById('readbar');if(!b)return;const on=document.getElementById('page-lesson').classList.contains('active')&&lessonKey;const d=document.documentElement.scrollHeight-innerHeight;b.style.width=on&&d>0?Math.min(100,scrollY/d*100)+'%':'0'}
+function route(){const m=location.hash.match(/^#\/materi\/(\w+)/);if(m&&lessons[m[1]]){if(lessonKey!==m[1]||!document.getElementById('page-lesson').classList.contains('active'))openLesson(m[1])}else if(document.getElementById('page-lesson').classList.contains('active')&&lessonKey){go('lesson')}}
+(()=>{const b=document.createElement('div');b.id='readbar';document.body.appendChild(b)})();
+addEventListener('scroll',updateReadBar,{passive:true});addEventListener('hashchange',route);
+const Q=[
+{m:'ergonomi',s:0,q:'Kakimu menggantung saat duduk di kursi yang terlalu tinggi. Apa yang sebaiknya dilakukan?',o:['Dibiarkan, nanti juga terbiasa','Sesuaikan kursi atau pakai pijakan kaki yang stabil','Duduk di ujung kursi agar kaki menyentuh lantai'],a:1,w:'Kaki perlu tumpuan. Sesuaikan kursi atau gunakan pijakan yang stabil, dan hindari bertahan di satu posisi terlalu lama.'},
+{m:'ergonomi',s:1,q:'Posisi layar monitor yang dianjurkan adalah…',o:['Tepat di depan, bagian atas layar sekitar tinggi mata atau sedikit di bawahnya','Di samping meja agar leher menoleh','Cukup tinggi sehingga kepala sedikit mendongak'],a:0,w:'Monitor di depan dan setinggi mata mencegah leher menoleh atau mendongak terus-menerus.'},
+{m:'ergonomi',s:3,q:'Setelah dua jam coding, kamu membungkuk dan pergelangan tangan terasa tidak nyaman. Langkah yang tepat?',o:['Lanjut sampai tugas selesai','Perbaiki posisi, ambil jeda, dan beri tahu guru jika keluhan berlanjut','Tambah tekanan pada tangan agar terbiasa'],a:1,w:'Memperbaiki posisi, mengambil jeda, dan melapor bila keluhan berlanjut adalah tindakan yang tepat.'},
+{m:'listrik',s:0,q:'Kabel power komputer di mejamu terkelupas. Apa tindakan paling aman?',o:['Menutupnya dengan kertas lalu lanjut bekerja','Jangan digunakan dan segera laporkan kepada guru/petugas','Memegang kabel untuk mengecek apakah masih ada arus'],a:1,w:'Perangkat yang tampak rusak tidak boleh digunakan. Jangan disentuh atau diperbaiki sendiri, laporkan kepada pihak berwenang.'},
+{m:'listrik',s:1,q:'Cara yang benar untuk mencabut steker dari stopkontak adalah…',o:['Menarik kabelnya','Memegang bagian steker lalu mencabutnya','Memutar kabel sambil menarik'],a:1,w:'Menarik kabel dapat merusaknya. Pegang bagian steker saat mencabut.'},
+{m:'listrik',s:2,q:'Di mana sebaiknya minumanmu diletakkan saat praktik?',o:['Di samping keyboard agar mudah dijangkau','Jauh dari komputer dan stopkontak','Di atas casing komputer'],a:1,w:'Cairan yang tumpah dapat merusak perangkat dan menimbulkan bahaya listrik.'},
+{m:'mata',s:0,q:'Layar terasa silau karena pantulan lampu atau jendela. Yang sebaiknya dilakukan?',o:['Naikkan kecerahan sampai maksimum','Atur kecerahan dan hindari pantulan langsung pada layar','Abaikan, silau tidak berpengaruh'],a:1,w:'Atur kecerahan sesuai ruangan dan hindari pantulan langsung agar teks nyaman dibaca.'},
+{m:'mata',s:1,q:'Aturan 20-20-20 untuk menjaga mata berarti…',o:['Setiap 20 menit, lihat objek sejauh sekitar 6 meter selama 20 detik','Bekerja 20 jam, istirahat 20 menit, minum 20 gelas','Setiap 20 detik, pejamkan mata selama 20 menit'],a:0,w:'Ini panduan praktis untuk memberi mata jeda dari fokus dekat, bukan pengganti pemeriksaan medis.'},
+{m:'darurat',s:0,q:'Apa yang perlu kamu ketahui sebelum mulai praktik di lab?',o:['Pintu keluar, jalur evakuasi, dan titik kumpul','Hanya letak kantin terdekat','Kata sandi Wi-Fi guru'],a:0,w:'Kenali pintu keluar, jalur evakuasi, titik kumpul, dan alarm sebelum keadaan darurat terjadi.'},
+{m:'darurat',s:1,q:'Alarm evakuasi berbunyi saat kamu di lab. Kamu sebaiknya…',o:['Mengambil semua barang dulu','Mengikuti jalur evakuasi dan arahan petugas','Kembali ke kelas untuk memastikan'],a:1,w:'Segera evakuasi lewat jalur aman dan jangan kembali mengambil barang.'},
+{m:'darurat',s:2,q:'Ada api kecil dan kamu belum pernah dilatih memakai APAR. Sikap yang tepat?',o:['Mencoba memadamkannya sendiri','Beri peringatan, laporkan, lalu evakuasi','Merekam dulu sebagai bukti laporan'],a:1,w:'Jangan memadamkan api jika tidak terlatih atau situasinya tidak aman. Ikuti prosedur dan arahan petugas.'},
+{m:'lab',s:0,q:'Tas diletakkan di tengah jalur berjalan lab. Risiko utamanya adalah…',o:['Orang tersandung dan jalur keluar terhalang','Wi-Fi menjadi lambat','Monitor menjadi panas'],a:0,w:'Barang di jalur berjalan meningkatkan risiko tersandung dan menghambat evakuasi.'},
+{m:'lab',s:1,q:'Casing komputer terasa longgar dan kamu penasaran dengan isinya. Sebaiknya…',o:['Membukanya sebentar','Tidak membuka tanpa izin dan kompetensi, laporkan kepada guru','Meminta temanmu yang membukanya'],a:1,w:'Jangan membuka casing atau memperbaiki perangkat tanpa izin dan kompetensi.'},
+{m:'lelah',s:1,q:'Perangkatmu sering mati sendiri padahal deadline sudah dekat. Sebaiknya…',o:['Menyembunyikan masalahnya agar tidak dianggap lambat','Menyampaikannya kepada guru atau tim','Memaksa perangkat tetap dipakai sampai selesai'],a:1,w:'Jangan menutupi masalah perangkat demi mengejar deadline. Komunikasikan agar bisa ditangani aman.'},
+{m:'lelah',s:2,q:'Kamu merasa sangat lelah saat praktik. Langkah yang tepat?',o:['Lanjut tanpa jeda','Ambil jeda, minum, dan beri tahu guru','Menambah kopi dan bekerja sampai larut'],a:1,w:'Ambil jeda sesuai kebutuhan dan beri tahu guru atau pembimbing agar tugas ditangani dengan aman.'}];
+const LET='ABCD',MK=()=>Object.keys(lessons),nq=m=>Q.filter(x=>x.m===m).length;
+let quiz={view:'intro',items:[],i:0,sel:[],scope:'all'};
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function startQuiz(scope){scope=scope||'all';
+ quiz.items=Q.filter(x=>scope==='all'||x.m===scope).map(x=>{const ord=shuffle(x.o.map((_,i)=>i));return{m:x.m,s:x.s,q:x.q,o:ord.map(i=>x.o[i]),a:ord.indexOf(x.a),w:x.w}});
+ quiz.scope=scope;quiz.i=0;quiz.sel=Array(quiz.items.length).fill(null);quiz.view='play';renderQuiz();window.scrollTo({top:0,behavior:'smooth'})}
+function quizFromModule(k){go('quiz');startQuiz(k)}
+function readSec(m,s){openLesson(m,true);setTimeout(()=>{const e=document.getElementById('s'+s);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})},120)}
+const srcLink=(x,t)=>`<button class="link" onclick="readSec('${x.m}',${x.s})">${t||'Baca bagian ini'}: ${lessons[x.m].sections[x.s][0]} (${lessons[x.m].title}) →</button>`;
+function renderQuiz(){const el=document.getElementById('quizApp');if(el)el.innerHTML=quiz.view==='play'?playHTML():quiz.view==='result'?resultHTML():introHTML()}
+function introHTML(){const b=Number(store.get('rk3best',-1));
+ return `<div class="qz-in"><div class="eyebrow">Lembar uji</div><h2>${Q.length} soal dari ${MK().length} modul</h2><p class="lead">Setiap soal diambil dari satu bagian di materi. Kamu langsung tahu benar atau salahnya, dan bisa membuka bagian materi yang dimaksud kalau masih ragu.</p><button class="btn big" onclick="startQuiz()">Mulai ${Q.length} soal →</button>${b>=0?`<div class="best">Skor terbaik: ${b}%</div>`:''}
+ <h3>Atau latihan per modul</h3><div>${MK().map((k,i)=>`<button class="mrow" onclick="startQuiz('${k}')"><span class="mn">0${i+1}</span><span class="mt">${lessons[k].title}</span><span class="mc">${nq(k)} soal →</span></button>`).join('')}</div></div>`}
+function playHTML(){const{items,i,sel}=quiz,it=items[i],ans=sel[i],lock=ans!==null,last=i===items.length-1,n=items.length;
+ const ok=sel.filter((s,k)=>s===items[k].a).length,mi=MK().indexOf(it.m)+1;
+ const ruler=items.map((x,k)=>`<i class="${sel[k]===null?(k===i?'cur':''):sel[k]===x.a?'ok':'bad'}"></i>`).join('');
+ const opts=it.o.map((o,k)=>{let c='opt',m=LET[k];if(lock){if(k===it.a){c+=' ok';m='✓'}else if(k===ans){c+=' bad';m='✕'}else c+=' dim'}return `<button class="${c}" ${lock?'disabled':''} onclick="pick(${k})"><b class="ltr">${m}</b><span>${o}</span></button>`}).join('');
+ const fb=lock?`<div class="fb ${ans===it.a?'ok':'bad'}" role="status"><b>${ans===it.a?'Benar.':'Kurang tepat.'}</b><p>${it.w}</p>${srcLink(it)}</div>`:'';
+ return `<div class="qz-in"><div class="qz-top"><span>Modul 0${mi} · ${lessons[it.m].title}</span><span class="sc">Benar ${ok}/${n}</span></div><div class="ruler" aria-hidden="true">${ruler}</div><div class="qn"><b>${String(i+1).padStart(2,'0')}</b>/ ${n}</div><div class="question">${it.q}</div>${opts}${fb}<div class="qz-nav"><button class="btn alt" onclick="nav(-1)" ${i===0?'disabled':''}>← Sebelumnya</button><button class="btn" onclick="nav(1)" ${lock?'':'disabled'}>${last?'Lihat hasil':'Lanjut →'}</button></div><div class="kbd">Pintasan: A / B / C untuk menjawab, Enter untuk lanjut</div></div>`}
+function pick(k){if(quiz.sel[quiz.i]!==null)return;quiz.sel[quiz.i]=k;renderQuiz()}
+function nav(d){const{items,i,sel}=quiz;if(d===1&&sel[i]===null)return;if(d===1&&i===items.length-1){finishQuiz();return}quiz.i=Math.max(0,Math.min(items.length-1,i+d));renderQuiz()}
+function finishQuiz(){const n=quiz.items.length,ok=quiz.sel.filter((s,k)=>s===quiz.items[k].a).length,pct=Math.round(ok/n*100);
+ quiz.ok=ok;quiz.pct=pct;quiz.view='result';quizDone++;store.set('rk3quiz',quizDone);
+ if(quiz.scope==='all'&&pct>Number(store.get('rk3best',-1)))store.set('rk3best',pct);
+ updateProgress();renderQuiz();window.scrollTo({top:0,behavior:'smooth'})}
+function resultHTML(){const{items,sel,ok,pct,scope}=quiz,n=items.length;
+ const v=pct>=87?['Sangat baik.','Kamu menguasai hampir semua prinsip dasar K3 di materi.']:pct>=67?['Baik.','Sebagian besar sudah tepat. Baca ulang bagian yang masih salah di bawah.']:pct>=40?['Cukup.','Dasarnya sudah ada. Buka modul yang skornya rendah lalu coba lagi.']:['Perlu belajar lagi.','Tidak masalah di awal. Baca modulnya dulu, lalu ulangi kuisnya.'];
+ const by={};items.forEach((x,k)=>{(by[x.m]=by[x.m]||{ok:0,n:0}).n++;if(sel[k]===x.a)by[x.m].ok++});
+ const rows=Object.keys(by).map(k=>{const r=by[k];return `<div class="mr2"><span>${lessons[k].title}</span><div class="mbar"><i style="width:${r.ok/r.n*100}%"></i></div><span>${r.ok}/${r.n}</span>${r.ok<r.n?`<button class="link" onclick="openLesson('${k}')">Baca ulang →</button>`:'<span class="good">Paham</span>'}</div>`}).join('');
+ const rv=items.map((x,k)=>{const g=sel[k]===x.a;return `<div class="rv-item"><span class="st ${g?'ok':'bad'}">${g?'Benar':'Salah'} · Soal ${k+1}</span><b>${x.q}</b>${g?'':`<p><span class="you">Jawabanmu:</span> ${x.o[sel[k]]}</p>`}<p><span class="right">Jawaban benar:</span> ${x.o[x.a]}<br>${x.w}</p>${g?'':srcLink(x,'Baca ulang')}</div>`}).join('');
+ return `<div class="qz-in"><div class="eyebrow">Hasil · ${scope==='all'?'Semua modul':lessons[scope].title}</div><div class="big-score">${ok}<span>/${n}</span></div><p class="verdict"><strong>${v[0]}</strong> ${v[1]}</p><h3>Skor per modul</h3>${rows}<div class="res-actions"><button class="btn big" onclick="startQuiz('${scope}')">Ulangi</button><button class="btn alt big" onclick="quiz.view='intro';renderQuiz()">Pilih modul lain</button></div><h3>Pembahasan</h3>${rv}</div>`}
+document.addEventListener('keydown',e=>{
+ if(e.ctrlKey||e.metaKey||e.altKey||quiz.view!=='play'||!document.getElementById('page-quiz').classList.contains('active')||e.target.tagName==='INPUT')return;
+ const k=e.key.toLowerCase(),L=LET.toLowerCase(),n=L.indexOf(k)>=0?L.indexOf(k):Number(k)-1;
+ if(n>=0&&n<quiz.items[quiz.i].o.length)pick(n);
+ else if((k==='enter'&&e.target.tagName!=='BUTTON')||k==='arrowright')nav(1);
+ else if(k==='arrowleft')nav(-1)});
+function saveChecklist(){let n=[...document.querySelectorAll('#checklist input')].filter(x=>x.checked).length;toast(`${n} dari 4 poin checklist sudah dicentang.`)}
+document.getElementById('search').addEventListener('input',e=>{let q=e.target.value.toLowerCase().trim();if(q){go('courses');let visible=0;document.querySelectorAll('#catalog .card').forEach(c=>{let show=(c.innerText+' '+(c.dataset.search||'')).toLowerCase().includes(q);c.style.display=show?'':'none';if(show)visible++});document.getElementById('noResults').classList.toggle('hidden',visible>0)}else{document.querySelectorAll('#catalog .card').forEach(c=>c.style.display='');document.getElementById('noResults').classList.add('hidden')}});
+updateProgress();go('home');route();
+</script>
+</body></html>
